@@ -26,6 +26,18 @@ class Client(AbstractClockify):
             logging.error("API error: {0}".format(e))
             raise e
 
+    def delete_client(self, workspace_id, client_id):
+        """Deletes client from given workspace with given id.
+        :param workspace_id Id of workspace.
+        :param client_id    Id of client.
+        """
+        try:
+            url = self.base_url + '/workspaces/' + workspace_id + '/clients/' + client_id
+            return self.delete(url)
+        except Exception as e:
+            logging.error("API error: {0}".format(e))
+            raise e
+
     def add_client(self, workspace_id, client_name):
         """Add new client into workspace.
         :param workspace_id Id of workspace.
