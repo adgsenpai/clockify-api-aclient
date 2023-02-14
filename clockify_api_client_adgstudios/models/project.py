@@ -26,6 +26,31 @@ class Project(AbstractClockify):
             logging.error("API error: {0}".format(e))
             raise e
 
+    def get_project_by_id(self, workspace_id, project_id):
+        """Returns project from given workspace with given id.
+        :param workspace_id Id of workspace.
+        :param project_id   Id of project.
+        :return             Dictionary representation of project.
+        """
+        try:
+            url = self.base_url + '/workspaces/' + workspace_id + '/projects/' + project_id
+            return self.get(url)
+        except Exception as e:
+            logging.error("API error: {0}".format(e))
+            raise e
+
+    def delete_project(self, workspace_id, project_id):
+        """Deletes project from given workspace with given id.
+        :param workspace_id Id of workspace.
+        :param project_id   Id of project.
+        """
+        try:
+            url = self.base_url + '/workspaces/' + workspace_id + '/projects/' + project_id
+            return self.delete(url)
+        except Exception as e:
+            logging.error("API error: {0}".format(e))
+            raise e        
+
     def add_project(self, workspace_id, project_name, client_id, billable=False, public=False, color="#16407B"):
         """Add new project into workspace.
         :param workspace_id Id of workspace.
