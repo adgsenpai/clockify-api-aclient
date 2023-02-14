@@ -1,5 +1,5 @@
-from clockify_api_client.factories.abstract_factory import AbstractFactory
-from clockify_api_client.models.workspace import Workspace
+from clockify_api_client_adgstudios.factories.abstract_factory import AbstractFactory
+from clockify_api_client_adgstudios.models.workspace import Workspace
 
 
 class WorkspaceFactory(AbstractFactory):

@@ -1,6 +1,6 @@
 import logging
 
-from clockify_api_client.abstract_clockify import AbstractClockify
+from clockify_api_client_adgstudios.abstract_clockify import AbstractClockify
 
 
 class Report(AbstractClockify):

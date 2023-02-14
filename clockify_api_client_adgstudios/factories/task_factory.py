@@ -1,5 +1,5 @@
-from clockify_api_client.factories.abstract_factory import AbstractFactory
-from clockify_api_client.models.task import Task
+from clockify_api_client_adgstudios.factories.abstract_factory import AbstractFactory
+from clockify_api_client_adgstudios.models.task import Task
 
 
 class TaskFactory(AbstractFactory):

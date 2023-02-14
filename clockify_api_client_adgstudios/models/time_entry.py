@@ -1,7 +1,7 @@
 import logging
 from urllib.parse import urlencode
 
-from clockify_api_client.abstract_clockify import AbstractClockify
+from clockify_api_client_adgstudios.abstract_clockify import AbstractClockify
 
 
 class TimeEntry(AbstractClockify):
