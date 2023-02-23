@@ -5,10 +5,8 @@ from clockify_api_client_adgstudios.abstract_clockify import AbstractClockify
 
 
 class Client(AbstractClockify):
-
     def __init__(self, api_key, api_url):
         super(Client, self).__init__(api_key=api_key, api_url=api_url)
-
     def get_clients(self, workspace_id, params=None):
         """Returns all clients.
         :param workspace_id Id of workspace to look for clients.

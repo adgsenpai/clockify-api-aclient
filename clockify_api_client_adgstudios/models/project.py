@@ -65,9 +65,9 @@ class Project(AbstractClockify):
                 'name': project_name,
                 "clientId": client_id,
                 "isPublic": "true" if public else "false",
-                "billable": billable
+                "billable": "true" if billable else "false",
             }
             return self.post(url, data)
         except Exception as e:
             logging.error("API error: {0}".format(e))
-            raise e
+            raise e        

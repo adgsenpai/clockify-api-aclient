@@ -41,16 +41,18 @@ class User(AbstractClockify):
         """Adds new user into workspace.
         :param workspace_id Id of workspace.
         :param email        Email of new user.
-        :return             Dictionary representation of user."""
+        :return             Dictionary representation of user.
+        """
         try:
             url = self.base_url + '/workspaces/' + workspace_id + '/users/'
-            emails = list()
-            emails.append(email)
-            data = {'emails': emails}
-            return self.post(url, data)
+            payload = {
+                'email': email
+            }
+            return self.post(url, payload)
         except Exception as e:
             logging.error("API error: {0}".format(e))
             raise e
+         
 
     def update_user(self, workspace_id, user_id, payload):
         """Adds new user into workspace.

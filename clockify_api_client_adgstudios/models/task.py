@@ -74,3 +74,17 @@ class Task(AbstractClockify):
         except Exception as e:
             logging.error("API error: {0}".format(e))
             raise e
+
+    def delete_task(self, workspace_id, project_id, task_id):
+        """Deletes task from Clockify.
+        :param workspace_id  Id of workspace.
+        :param project_id    Id of project.
+        :param task_id       Id of task.
+        :return              Dictionary with task object representation.
+        """
+        try:
+            url = self.base_url + '/workspaces/' + workspace_id + '/projects/' + project_id + '/tasks/' + task_id
+            return self.delete(url)
+        except Exception as e:
+            logging.error("API error: {0}".format(e))
+            raise e
